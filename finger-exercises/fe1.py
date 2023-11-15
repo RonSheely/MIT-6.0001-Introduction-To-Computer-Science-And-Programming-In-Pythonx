@@ -3,8 +3,12 @@ def largest_odd_number(*args):
     for number in args:
         if number % 2 != 0:
             divisible_by_3.append(number)
-    return max(divisible_by_3)
+    if not divisible_by_3:
+        return_value = min(args)
+    else:
+        return_value = max(divisible_by_3)
+    return return_value
 
 
-x = largest_odd_number(1, 5, 7)
+x = largest_odd_number(2, 4, 6)
 print(x)
