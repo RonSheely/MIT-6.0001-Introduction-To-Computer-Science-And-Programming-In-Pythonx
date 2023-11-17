@@ -16,7 +16,7 @@ def main():
     gain_input = int(input("Please enter a number to be tested: "))
     result = get_root_and_power(gain_input)
     if result == (0, 0):
-        print("root**power does not exist for your integer, unless power > 6")
+        print("root**power does not exist for your integer, unless power > 6, or power < 1")
     else:
         print(f"The resulting equation to your number is {result[0]}**{result[1]}")
 
