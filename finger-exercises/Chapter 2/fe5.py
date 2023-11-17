@@ -1,3 +1,9 @@
+"""Finger exercise: Write a program that prints the sum of the prime
+numbers greater than 2 and less than 1000. Hint: you probably want
+to use a for loop that is a primality test nested inside a for loop that
+iterates over the odd integers between 3 and 999."""
+
+
 def check_for_prime(input_number: int) -> bool:
     for x in range(2, input_number - 1):
         if input_number % x == 0:
