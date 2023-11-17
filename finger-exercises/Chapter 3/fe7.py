@@ -18,7 +18,7 @@ def main():
     if result == (0, 0):
         print("root**power does not exist for your integer, unless power > 6, or power < 1")
     else:
-        print(f"The resulting equation to your number is {result[0]}**{result[1]}")
+        print(f"The resulting equation for your integer is {result[0]}**{result[1]}")
 
 
 if __name__ == "__main__":
