@@ -1,3 +1,8 @@
+"""Finger exercise: Write a program that examines three variables—
+x, y, and z—and prints the largest odd number among them. If none
+of them are odd, it should print the smallest value of the three."""
+
+
 def largest_odd_number(*args):
     divisible_by_3 = []
     for number in args:
