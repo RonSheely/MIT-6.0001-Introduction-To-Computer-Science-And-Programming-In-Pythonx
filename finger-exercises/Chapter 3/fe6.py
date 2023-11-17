@@ -1,3 +1,7 @@
+"""Finger exercise: Change the code in Figure 3-2 so that it returns
+the largest rather than the smallest divisor. Hint: if y*z = x and y is
+the smallest divisor of x, z is the largest divisor of x."""
+
 x = int(input('Enter an integer greater than 2: '))
 smallest_divisor = 0
 for guess in range(2, x):
