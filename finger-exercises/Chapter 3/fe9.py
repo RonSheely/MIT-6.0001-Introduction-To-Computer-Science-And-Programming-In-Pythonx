@@ -6,7 +6,7 @@ to ensure that the answer lies within the region being searched."""
 # Instead of doubling the guesses by searching through both negative and positive numbers,
 # I set x to the absolute value of itself because the root of x and the root of -x would turn up the same answer.
 x = abs(int(input(">> ")))
-epsilon = 0.01
+epsilon = 0.00000000000001
 num_guesses, low = 0, 0
 high = max(1, x)
 ans = (high + low) / 2
