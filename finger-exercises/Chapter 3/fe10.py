@@ -19,7 +19,7 @@ def run_egg_test(highest_safe_floor: int):
     low = 1
     high = max(low, floors)
     current_floor = int((high + low) / 2)
-    while current_floor != highest_safe_floor:
+    while True:
         if current_floor > highest_safe_floor:
             high = current_floor
             print("SPLAT! The egg breaks!")
@@ -28,6 +28,8 @@ def run_egg_test(highest_safe_floor: int):
         current_floor = int((high + low) / 2)
         eggs_used += 1
         print(f"The man drops the egg from floor {current_floor}... He's used {eggs_used} egg(s)")
+        if high - 1 == low:
+            break
 
     print(f"The egg survives on floor {current_floor}, what a breakthrough!")
 
@@ -38,4 +40,4 @@ def main():
 
 
 if __name__ == "__main__":
-    run_egg_test(65)
+    run_egg_test(98)
