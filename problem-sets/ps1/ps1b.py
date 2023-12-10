@@ -2,7 +2,8 @@ G_PORTION_DOWN_PAYMENT = 0.25
 G_ANNUAL_RETURN = 0.04
 
 
-def months_to_save(annual_salary: int, portion_saved: float, total_cost: int, semi_annual_raise: float) -> int:
+def months_to_save(annual_salary: int, portion_saved: float,
+                   total_cost: int, semi_annual_raise: float) -> int:
     money_to_save = total_cost * G_PORTION_DOWN_PAYMENT
     current_savings = 0
     months_passed = 0
