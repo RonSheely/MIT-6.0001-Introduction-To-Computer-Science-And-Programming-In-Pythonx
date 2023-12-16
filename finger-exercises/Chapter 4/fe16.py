@@ -11,8 +11,8 @@ def log(x, base: int, epsilon):
         raise ValueError("X must be greater than 1")
     if epsilon < 0:
         raise ValueError("Epsilon must be greater than 0")
-    if not base >= 1:
-        raise ValueError("Base value must be equal or greater than 1")
+    if not base > 1:
+        raise ValueError("Base value must be greater than 1")
     low = 0
     high = x / base
     ans = (high + low) / 2
@@ -25,4 +25,4 @@ def log(x, base: int, epsilon):
     return ans
 
 
-print(log(1234, 1, 0.001))
+print(log(1234, 2, 0.001))
