@@ -4,4 +4,4 @@ None. Otherwise, it should return the value of dividing the first
 argument by the second argument. Hint: use a conditional
 expression."""
 
-lambda x, y: None if y == 0 else x / y
+print(lambda x, y: None if y == 0 else x / y)
