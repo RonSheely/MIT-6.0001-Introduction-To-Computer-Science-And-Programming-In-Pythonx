@@ -6,7 +6,7 @@ test_string = "bobisabuilder"
 compare_string = "bis"
 
 
-def find_last(s: str, sub: str) -> int:
+def find_last(s: str, sub: str) -> int or None:
     """s and sub are non-empty strings
     Returns the index of the last occurrence of sub in s.
     Returns None if sub does not occur in s"""
