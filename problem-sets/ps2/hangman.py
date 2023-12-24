@@ -60,10 +60,11 @@ def is_word_guessed(secret_word, letters_guessed):
     returns: boolean, True if all the letters of secret_word are in letters_guessed;
       False otherwise
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    secret_word_list = list(secret_word)
+    for letter in secret_word_list:
+        if not letter.lower() in letters_guessed:
+            return False
+    return True
 
 def get_guessed_word(secret_word, letters_guessed: list):
     '''
@@ -75,8 +76,8 @@ def get_guessed_word(secret_word, letters_guessed: list):
     guessed_word_blank = list("_" * len(secret_word))
     for letter in letters_guessed:
         for x, char in enumerate(secret_word):
-            if char == letter:
-                guessed_word_blank[x] = letter
+            if char == letter.lower():
+                guessed_word_blank[x] = letter.lower()
     return "".join(guessed_word_blank)
 
 
@@ -202,7 +203,7 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    print(get_available_letters(["B", "A", "Z"]))
+    print(is_word_guessed("superr", ["s", "u", "p", "e", "r"]))
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
