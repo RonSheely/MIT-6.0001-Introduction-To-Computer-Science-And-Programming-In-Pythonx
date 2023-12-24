@@ -64,15 +64,19 @@ def is_word_guessed(secret_word, letters_guessed):
 
 
 
-def get_guessed_word(secret_word, letters_guessed):
+def get_guessed_word(secret_word, letters_guessed: list):
     '''
     secret_word: string, the word the user is guessing
     letters_guessed: list (of letters), which letters have been guessed so far
     returns: string, comprised of letters, underscores (_), and spaces that represents
       which letters in secret_word have been guessed so far.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    guessed_word_blank = list("_" * len(secret_word))
+    for letter in letters_guessed:
+        for x, char in enumerate(secret_word):
+            if char == letter:
+                guessed_word_blank[x] = letter
+    return ''.join(guessed_word_blank)
 
 
 
@@ -195,13 +199,13 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    # pass
+    print(get_guessed_word("blablabla", ["b", "a", "l"]))
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    secret_word = choose_word(wordlist)
-    hangman(secret_word)
+    # secret_word = choose_word(wordlist)
+    # hangman(secret_word)
 
 ###############
     
