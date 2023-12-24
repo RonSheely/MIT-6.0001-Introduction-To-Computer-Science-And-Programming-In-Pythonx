@@ -12,6 +12,7 @@
 import random
 import string
 
+ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz"
 WORDLIST_FILENAME = "words.txt"
 
 
@@ -76,7 +77,7 @@ def get_guessed_word(secret_word, letters_guessed: list):
         for x, char in enumerate(secret_word):
             if char == letter:
                 guessed_word_blank[x] = letter
-    return ''.join(guessed_word_blank)
+    return "".join(guessed_word_blank)
 
 
 
@@ -86,10 +87,12 @@ def get_available_letters(letters_guessed):
     returns: string (of letters), comprised of letters that represents which letters have not
       yet been guessed.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-    
-    
+    letters_list = list(ALL_LETTERS)
+    for letter in letters_guessed:
+        if ALL_LETTERS.find(letter):
+            letters_list.remove(letter.lower())
+    return "".join(letters_list)
+
 
 def hangman(secret_word):
     '''
@@ -199,7 +202,7 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    print(get_guessed_word("blablabla", ["b", "a", "l"]))
+    print(get_available_letters(["B", "A", "Z"]))
 
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
