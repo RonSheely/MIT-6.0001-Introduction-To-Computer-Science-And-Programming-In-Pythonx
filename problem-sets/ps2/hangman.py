@@ -11,6 +11,8 @@
 # (so be sure to read the docstrings!)
 import random
 import string
+import os
+
 
 ALL_LETTERS = "abcdefghijklmnopqrstuvwxyz"
 WORDLIST_FILENAME = "words.txt"
@@ -95,6 +97,10 @@ def get_available_letters(letters_guessed):
     return "".join(letters_list)
 
 
+def check_input(message, secret_word, guessed_letters):
+    print(message, get_guessed_word(secret_word, guessed_letters))
+
+
 def hangman(secret_word):
     '''
     secret_word: string, the secret word to guess.
@@ -120,10 +126,36 @@ def hangman(secret_word):
     
     Follows the other limitations detailed in the problem write-up.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    guesses = 6
+    guessed_letters = []
+    guessed = False
+    print(f"Im thinking of a word with {len(secret_word)} letters")
+    while guesses > 0:
+        guessed = is_word_guessed(secret_word, guessed_letters)
+        if guessed is True:
+            print("Congrats!, You won!")
+            return True
+        print(f"You Have {guesses} guesses left")
+        print(f"Available Letters: {get_available_letters(guessed_letters)}")
+        user_guess = input("Please guess a letter: ")[0].lower()
+        if user_guess not in ALL_LETTERS:
+            check_input("Guess must be a letter:", secret_word, guessed_letters)
+            os.system("cls")
+            continue
+        if user_guess in guessed_letters:
+            check_input("Letter already guessed:", secret_word, guessed_letters)
+            os.system("cls")
+            continue
+        guessed_letters.append(user_guess)
+        if user_guess in secret_word:
+            check_input("Good guess:", secret_word, guessed_letters)
+            os.system("cls")
+        else:
+            check_input("Oops! That letter is not in my word:", secret_word, guessed_letters)
+            os.system("cls")
+            guesses -= 1
+    print("Sorry! You Lose!")
+    return False
 
 # When you've completed your hangman function, scroll down to the bottom
 # of the file and uncomment the first two lines to test
@@ -203,13 +235,11 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    print(is_word_guessed("superr", ["s", "u", "p", "e", "r"]))
-
     # To test part 2, comment out the pass line above and
     # uncomment the following two lines.
     
-    # secret_word = choose_word(wordlist)
-    # hangman(secret_word)
+    secret_word = choose_word(wordlist)
+    hangman(secret_word)
 
 ###############
     
