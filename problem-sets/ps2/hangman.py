@@ -212,10 +212,11 @@ def show_possible_matches(my_word):
              that has already been revealed.
 
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
-
-
+    found = []
+    for word in wordlist:
+        if match_with_gaps(my_word, word):
+            found.append(word)
+    return found
 
 def hangman_with_hints(secret_word):
     '''
