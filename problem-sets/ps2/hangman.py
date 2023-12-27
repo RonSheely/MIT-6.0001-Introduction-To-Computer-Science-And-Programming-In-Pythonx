@@ -245,8 +245,58 @@ def hangman_with_hints(secret_word):
     
     Follows the other limitations detailed in the problem write-up.
     '''
-    # FILL IN YOUR CODE HERE AND DELETE "pass"
-    pass
+    guesses = 6
+    warnings = 3
+    guessed_letters = []
+    guessed = False
+    print(f"Im thinking of a word with {len(secret_word)} letters")
+    while guesses > 0:
+        if warnings == 0:
+            print("You used three warnings! you lost a guess!")
+            warnings = 3
+            guesses -= 1
+        guessed = is_word_guessed(secret_word, guessed_letters)
+        if guessed is True:
+            print("Congrats!, You won!")
+            print(f"Your score: {guesses * len(set(secret_word))}")
+            return True
+        print(f"You Have {guesses} guesses left")
+        print(f"You have {warnings} warnings left")
+        print(f"Available Letters: {get_available_letters(guessed_letters)}")
+        user_guess = input("Please guess a letter: ")[0].lower()
+        if user_guess == "*":
+            results = show_possible_matches(get_guessed_word(secret_word, guessed_letters))
+            if len(results) > 40:
+                check_input("Too many possibilities, try again later:", secret_word, guessed_letters)
+            else:
+                print("Possible word matches are:")
+                print(", ".join(results))
+                print(get_guessed_word(secret_word, guessed_letters))
+            continue
+        if user_guess not in ALL_LETTERS and user_guess != "*":
+            warnings -= 1
+            check_input("Guess must be a letter:", secret_word, guessed_letters)
+            os.system("cls")
+            continue
+        if user_guess in guessed_letters:
+            warnings -= 1
+            check_input("Letter already guessed:", secret_word, guessed_letters)
+            os.system("cls")
+            continue
+        guessed_letters.append(user_guess)
+        if user_guess in secret_word:
+            check_input("Good guess:", secret_word, guessed_letters)
+            os.system("cls")
+        if user_guess not in secret_word:
+            check_input("Oops! That letter is not in my word:", secret_word, guessed_letters)
+            os.system("cls")
+            if user_guess in VOWELS:
+                guesses -= 2
+            else:
+                guesses -= 1
+    print("Sorry! You Lose!")
+    print(f"The word was {secret_word}")
+    return False
 
 
 
@@ -257,15 +307,5 @@ def hangman_with_hints(secret_word):
 
 
 if __name__ == "__main__":
-    ...
-    
-    # secret_word = choose_word(wordlist)
-    # hangman(secret_word)
-
-###############
-    
-    # To test part 3 re-comment out the above lines and 
-    # uncomment the following two lines. 
-    
-    #secret_word = choose_word(wordlist)
-    #hangman_with_hints(secret_word)
+    secret_word = choose_word(wordlist)
+    hangman_with_hints(secret_word)
