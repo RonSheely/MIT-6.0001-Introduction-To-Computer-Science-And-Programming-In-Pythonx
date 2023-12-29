@@ -25,6 +25,7 @@ SCRABBLE_LETTER_VALUES = {
 
 WORDLIST_FILENAME = "words.txt"
 
+
 def load_words():
     """
     Returns a list of valid words. Words are strings of lowercase letters.
@@ -34,14 +35,15 @@ def load_words():
     """
     
     print("Loading word list from file...")
-    # inFile: file
-    inFile = open(WORDLIST_FILENAME, 'r')
+    # in_file: file
+    in_file = open(WORDLIST_FILENAME, 'r')
     # wordlist: list of strings
     wordlist = []
-    for line in inFile:
+    for line in in_file:
         wordlist.append(line.strip().lower())
     print("  ", len(wordlist), "words loaded.")
     return wordlist
+
 
 def get_frequency_dict(sequence):
     """
@@ -58,14 +60,14 @@ def get_frequency_dict(sequence):
     for x in sequence:
         freq[x] = freq.get(x,0) + 1
     return freq
-	
 
 # (end of helper code)
 # -----------------------------------
 
-#
+
 # Problem #1: Scoring a word
-#
+
+
 def get_word_score(word, n):
     """
     Returns the score for a word. Assumes the word is a
@@ -97,6 +99,8 @@ def get_word_score(word, n):
 #
 # Make sure you understand how this function works and what it does!
 #
+
+
 def display_hand(hand):
     """
     Displays the letters currently in the hand.
@@ -119,6 +123,8 @@ def display_hand(hand):
 # Make sure you understand how this function works and what it does!
 # You will need to modify this for Problem #4.
 #
+
+
 def deal_hand(n):
     """
     Returns a random hand containing n lowercase letters.
@@ -149,6 +155,8 @@ def deal_hand(n):
 #
 # Problem #2: Update a hand by removing letters
 #
+
+
 def update_hand(hand, word):
     """
     Does NOT assume that hand contains every letter in word at least as
@@ -173,6 +181,8 @@ def update_hand(hand, word):
 #
 # Problem #3: Test word validity
 #
+
+
 def is_valid_word(word, hand, word_list):
     """
     Returns True if word is in the word_list and is entirely
@@ -190,6 +200,8 @@ def is_valid_word(word, hand, word_list):
 #
 # Problem #5: Playing a hand
 #
+
+
 def calculate_handlen(hand):
     """ 
     Returns the length (number of letters) in the current hand.
@@ -199,6 +211,7 @@ def calculate_handlen(hand):
     """
     
     pass  # TO DO... Remove this line when you implement this function
+
 
 def play_hand(hand, word_list):
 
@@ -274,6 +287,7 @@ def play_hand(hand, word_list):
 # procedure you will use to substitute a letter in a hand
 #
 
+
 def substitute_hand(hand, letter):
     """ 
     Allow the user to replace all copies of one letter in the hand (chosen by user)
@@ -298,8 +312,8 @@ def substitute_hand(hand, letter):
     """
     
     pass  # TO DO... Remove this line when you implement this function
-       
-    
+
+
 def play_game(word_list):
     """
     Allow the user to play a series of hands
@@ -331,15 +345,14 @@ def play_game(word_list):
     word_list: list of lowercase strings
     """
     
-    print("play_game not implemented.") # TO DO... Remove this line when you implement this function
-    
+    print("play_game not implemented.")  # TO DO... Remove this line when you implement this function
 
 
-#
 # Build data structures used for entire session and play game
 # Do not remove the "if __name__ == '__main__':" line - this code is executed
 # when the program is run directly, instead of through an import statement
-#
+
+
 if __name__ == '__main__':
     word_list = load_words()
     play_game(word_list)
