@@ -16,7 +16,8 @@ CONSONANTS = 'bcdfghjklmnpqrstvwxyz'
 HAND_SIZE = 7
 
 SCRABBLE_LETTER_VALUES = {
-    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3, 'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
+    'a': 1, 'b': 3, 'c': 3, 'd': 2, 'e': 1, 'f': 4, 'g': 2, 'h': 4, 'i': 1, 'j': 8, 'k': 5, 'l': 1, 'm': 3,
+    'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
 
 # -----------------------------------
@@ -33,11 +34,8 @@ def load_words():
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    
     print("Loading word list from file...")
-    # in_file: file
     in_file = open(WORDLIST_FILENAME, 'r')
-    # wordlist: list of strings
     wordlist = []
     for line in in_file:
         wordlist.append(line.strip().lower())
@@ -54,11 +52,11 @@ def get_frequency_dict(sequence):
     sequence: string or list
     return: dictionary
     """
-    
+
     # freqs: dictionary (element_type -> int)
     freq = {}
     for x in sequence:
-        freq[x] = freq.get(x,0) + 1
+        freq[x] = freq.get(x, 0) + 1
     return freq
 
 # (end of helper code)
@@ -78,16 +76,15 @@ def get_word_score(word, n):
     lowercase letters, so you will have to handle uppercase and mixed case strings 
     appropriately. 
 
-	The score for a word is the product of two components:
+    The score for a word is the product of two components:
 
-	The first component is the sum of the points for letters in the word.
-	The second component is the larger of:
-            1, or
-            7*wordlen - 3*(n-wordlen), where wordlen is the length of the word
-            and n is the hand length when the word was played
+    The first component is the sum of the points for letters in the word.
+    The second component is the largest of:
+    1, or 7*wordlen - 3*(n-wordlen), where wordlen is the length of the word
+    and n is the hand length when the word was played
 
-	Letters are scored as in Scrabble; A is worth 1, B is
-	worth 3, C is worth 3, D is worth 2, E is worth 1, and so on.
+    Letters are scored as in Scrabble; A is worth 1, B is
+    worth 3, C is worth 3, D is worth 2, E is worth 1, and so on.
 
     word: string
     n: int >= 0
