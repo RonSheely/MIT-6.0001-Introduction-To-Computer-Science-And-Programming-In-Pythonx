@@ -90,8 +90,15 @@ def get_word_score(word, n):
     n: int >= 0
     returns: int >= 0
     """
-    
-    pass  # TO DO... Remove this line when you implement this function
+    assert n >= 0, "n must be greater than, or equal to zero."
+    word = word.lower()
+    first_component = 0
+    for char in word:
+        first_component += SCRABBLE_LETTER_VALUES[char]
+    second_component = 7 * len(word) - 3 * (n - len(word))
+    if second_component < 1:
+        second_component = 1
+    return first_component * second_component
 
 #
 # Make sure you understand how this function works and what it does!
@@ -351,5 +358,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    word_list = load_words()
-    play_game(word_list)
+    print(get_word_score("weed", 6))
+    # word_list = load_words()
+    # play_game(word_list)
