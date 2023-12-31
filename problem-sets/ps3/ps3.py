@@ -199,13 +199,11 @@ def is_valid_word(word, hand, word_list):
     handcopy = hand.copy()
 
     wild_card_position = 0
-    handle_wildcard = False
     found_in_dict = True
     for x, char in enumerate(word):
         char = char.lower()
         if char == "*":
             wild_card_position = x
-            handle_wildcard = True
         if (char in VOWELS or char in CONSONANTS) is False and char != "*":
             found_in_dict = False
         try:
@@ -216,7 +214,7 @@ def is_valid_word(word, hand, word_list):
         except KeyError:
             found_in_dict = False
     word_in_list = (word.lower() in word_list)
-    for char in VOWELS + CONSONANTS:
+    for char in VOWELS:
         test_string = word[:wild_card_position] + char + word[wild_card_position + 1:]
         if test_string in word_list:
             word_in_list = True
