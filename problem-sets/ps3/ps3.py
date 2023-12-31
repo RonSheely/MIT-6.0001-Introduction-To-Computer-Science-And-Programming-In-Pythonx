@@ -328,7 +328,14 @@ def substitute_hand(hand, letter):
     letter: string
     returns: dictionary (string -> int)
     """
-    pass
+    handcopy = hand.copy()
+    letters_in_hand = hand.keys()
+    old_letter_value = hand[letter]
+    available_letters = [let for let in VOWELS + CONSONANTS if let not in letters_in_hand]
+    new_letter = random.choice(available_letters)
+    handcopy.pop(letter)
+    handcopy[new_letter] = old_letter_value
+    return handcopy
 
 
 def play_game(word_list):
