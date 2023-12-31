@@ -19,9 +19,6 @@ SCRABBLE_LETTER_VALUES = {
     'n': 1, 'o': 1, 'p': 3, 'q': 10, 'r': 1, 's': 1, 't': 1, 'u': 1, 'v': 4, 'w': 4, 'x': 8, 'y': 4, 'z': 10
 }
 
-# -----------------------------------
-# Helper code
-# (you don't need to understand this helper code)
 
 WORDLIST_FILENAME = "words.txt"
 
@@ -57,12 +54,6 @@ def get_frequency_dict(sequence):
     for x in sequence:
         freq[x] = freq.get(x, 0) + 1
     return freq
-
-# (end of helper code)
-# -----------------------------------
-
-
-# Problem #1: Scoring a word
 
 
 def get_word_score(word, n):
@@ -115,8 +106,8 @@ def display_hand(hand):
     
     for letter in hand.keys():
         for j in range(hand[letter]):
-            print(letter, end=' ')      # print all on the same line
-    print()                             # print an empty line
+            print(letter, end=' ')
+    print()
 
 
 def deal_hand(n, wildcard=True):
@@ -156,10 +147,6 @@ def deal_hand(n, wildcard=True):
             hand["*"] = 1
 
     return hand
-
-#
-# Problem #2: Update a hand by removing letters
-#
 
 
 def update_hand(hand, word):
@@ -229,9 +216,6 @@ def is_valid_word(word, hand, word_list):
         if test_string in word_list:
             word_in_list = True
     return found_in_dict and word_in_list
-#
-# Problem #5: Playing a hand
-#
 
 
 def calculate_handlen(hand):
@@ -293,17 +277,6 @@ def play_hand(hand, word_list):
         hand = update_hand(hand, user_input)
     print(f"Hand over, your score was {total_score}")
     return total_score
-
-
-
-#
-# Problem #6: Playing a game
-# 
-
-
-#
-# procedure you will use to substitute a letter in a hand
-#
 
 
 def substitute_hand(hand, letter):
@@ -368,16 +341,29 @@ def play_game(word_list):
 
     word_list: list of lowercase strings
     """
-    
-    print("play_game not implemented.")  # TO DO... Remove this line when you implement this function
-
-
-# Build data structures used for entire session and play game
-# Do not remove the "if __name__ == '__main__':" line - this code is executed
-# when the program is run directly, instead of through an import statement
+    total_score = 0
+    letter_subbed = False
+    hand_replayed = False
+    total_hands = int(input("Enter total number of hands: "))
+    for _ in range(total_hands):
+        generated_hand = deal_hand(HAND_SIZE)
+        if not letter_subbed:
+            display_hand(generated_hand)
+            sub_letter_input = input("Would you like to substitute a letter? ").lower()
+            if sub_letter_input == "yes" or sub_letter_input == "y":
+                sub_letter_letter = input("Which letter would you like to replace: ").lower()
+                generated_hand = substitute_hand(generated_hand, sub_letter_letter)
+                letter_subbed = True
+        score = play_hand(generated_hand, word_list)
+        if not hand_replayed:
+            replay_hand_input = input("Would you like to replay the hand? ")
+            if replay_hand_input == "yes" or replay_hand_input == "y":
+                score2 = play_hand(generated_hand, word_list)
+                total_score += max(score, score2)
+        total_score += score
+    print(f"Total score over all hands: {total_score}")
 
 
 if __name__ == '__main__':
     word_list = load_words()
-    play_hand(deal_hand(6), word_list)
-    # play_game(word_list)
+    play_game(word_list)
