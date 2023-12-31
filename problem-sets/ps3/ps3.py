@@ -277,38 +277,22 @@ def play_hand(hand, word_list):
       returns: the total score for the hand
       
     """
-    
-    # BEGIN PSEUDOCODE <-- Remove this comment when you implement this function
-    # Keep track of the total score
-    
-    # As long as there are still letters left in the hand:
-    
-        # Display the hand
-        
-        # Ask user for input
-        
-        # If the input is two exclamation points:
-        
-            # End the game (break out of the loop)
-
-            
-        # Otherwise (the input is not two exclamation points):
-
-            # If the word is valid:
-
-                # Tell the user how many points the word earned,
-                # and the updated total score
-
-            # Otherwise (the word is not valid):
-                # Reject invalid word (print a message)
-                
-            # update the user's hand by removing the letters of their inputted word
-            
-
-    # Game is over (user entered '!!' or ran out of letters),
-    # so tell user the total score
-
-    # Return the total score as result of function
+    total_score = 0
+    while sum(hand.values()) > 0:
+        display_hand(hand)
+        user_input = input('Enter word, or "!!" to indicate that you are finished: ')
+        if user_input == "!!":
+            break
+        else:
+            if is_valid_word(user_input, hand, word_list):
+                earned_points = get_word_score(user_input, sum(hand.values()))
+                total_score += earned_points
+                print(f'"{user_input}" earned {earned_points}. Total: {total_score}')
+            else:
+                print("That is not a valid word. Please choose another word")
+        hand = update_hand(hand, user_input)
+    print(f"Hand over, your score was {total_score}")
+    return total_score
 
 
 
@@ -344,8 +328,7 @@ def substitute_hand(hand, letter):
     letter: string
     returns: dictionary (string -> int)
     """
-    
-    pass  # TO DO... Remove this line when you implement this function
+    pass
 
 
 def play_game(word_list):
@@ -388,6 +371,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    ...
-    # word_list = load_words()
+    word_list = load_words()
+    play_hand(deal_hand(6), word_list)
     # play_game(word_list)
