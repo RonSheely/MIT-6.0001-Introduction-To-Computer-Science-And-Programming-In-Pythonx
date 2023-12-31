@@ -119,7 +119,7 @@ def display_hand(hand):
     print()                             # print an empty line
 
 
-def deal_hand(n):
+def deal_hand(n, wildcard=True):
     """
     Returns a random hand containing n lowercase letters.
     ceil(n/3) letters in the hand should be VOWELS (note,
@@ -136,14 +136,25 @@ def deal_hand(n):
     hand={}
     num_vowels = int(math.ceil(n / 3))
 
+    vowels_in_hand = []
     for i in range(num_vowels):
         x = random.choice(VOWELS)
+        vowels_in_hand.append(x)
         hand[x] = hand.get(x, 0) + 1
     
     for i in range(num_vowels, n):    
         x = random.choice(CONSONANTS)
         hand[x] = hand.get(x, 0) + 1
-    
+
+    if wildcard is True:
+        x = random.choice(vowels_in_hand)
+        if hand[x] == 1:
+            del hand[x]
+            hand["*"] = 1
+        else:
+            hand[x] -= 1
+            hand["*"] = 1
+
     return hand
 
 #
@@ -375,6 +386,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    word_list = load_words()
-    print(is_valid_word("e*m", {'a': 1, 'r': 1, 'e': 1, 'j': 2, 'm': 1, '*': 1}, word_list))
+    print(deal_hand(6))
+    # word_list = load_words()
     # play_game(word_list)
