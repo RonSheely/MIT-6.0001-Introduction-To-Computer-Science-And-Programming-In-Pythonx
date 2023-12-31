@@ -196,9 +196,31 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     returns: boolean
     """
+    handcopy = hand.copy()
 
-    pass  # TO DO... Remove this line when you implement this function
-
+    wild_card_position = 0
+    handle_wildcard = False
+    found_in_dict = True
+    for x, char in enumerate(word):
+        char = char.lower()
+        if char == "*":
+            wild_card_position = x
+            handle_wildcard = True
+        if (char in VOWELS or char in CONSONANTS) is False and char != "*":
+            found_in_dict = False
+        try:
+            if handcopy[char] >= 1:
+                handcopy[char] -= 1
+            else:
+                found_in_dict = False
+        except KeyError:
+            found_in_dict = False
+    word_in_list = (word.lower() in word_list)
+    for char in VOWELS + CONSONANTS:
+        test_string = word[:wild_card_position] + char + word[wild_card_position + 1:]
+        if test_string in word_list:
+            word_in_list = True
+    return found_in_dict and word_in_list
 #
 # Problem #5: Playing a hand
 #
@@ -356,6 +378,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    print(update_hand({'a': 1, 'q': 1, 'l': 2, 'm': 1, 'u': 1, 'i': 1}, "quails"))
-    # word_list = load_words()
+    word_list = load_words()
+    print(is_valid_word("e*m", {'a': 1, 'r': 1, 'e': 1, 'j': 2, 'm': 1, '*': 1}, word_list))
     # play_game(word_list)
