@@ -241,8 +241,10 @@ def calculate_handlen(hand):
     hand: dictionary (string-> int)
     returns: integer
     """
-    
-    pass  # TO DO... Remove this line when you implement this function
+    letters = 0
+    for letter in hand.values():
+        letters += letter
+    return letters
 
 
 def play_hand(hand, word_list):
@@ -386,6 +388,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    print(deal_hand(6))
+    ...
     # word_list = load_words()
     # play_game(word_list)
