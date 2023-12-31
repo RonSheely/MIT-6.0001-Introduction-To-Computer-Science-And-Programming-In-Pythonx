@@ -100,10 +100,6 @@ def get_word_score(word, n):
         second_component = 1
     return first_component * second_component
 
-#
-# Make sure you understand how this function works and what it does!
-#
-
 
 def display_hand(hand):
     """
@@ -120,13 +116,8 @@ def display_hand(hand):
     
     for letter in hand.keys():
         for j in range(hand[letter]):
-             print(letter, end=' ')      # print all on the same line
-    print()                              # print an empty line
-
-#
-# Make sure you understand how this function works and what it does!
-# You will need to modify this for Problem #4.
-#
+            print(letter, end=' ')      # print all on the same line
+    print()                             # print an empty line
 
 
 def deal_hand(n):
@@ -179,12 +170,19 @@ def update_hand(hand, word):
     hand: dictionary (string -> int)    
     returns: dictionary (string -> int)
     """
-
-    pass  # TO DO... Remove this line when you implement this function
-
-#
-# Problem #3: Test word validity
-#
+    hand = hand.copy()
+    empty_letters = []
+    for char in word:
+        char = char.lower()
+        try:
+            hand[char] -= 1
+            if hand[char] == 0:
+                empty_letters.append(char)
+        except KeyError:
+            pass
+    for letter in empty_letters:
+        del hand[letter]
+    return hand
 
 
 def is_valid_word(word, hand, word_list):
@@ -358,6 +356,6 @@ def play_game(word_list):
 
 
 if __name__ == '__main__':
-    print(get_word_score("weed", 6))
+    print(update_hand({'a': 1, 'q': 1, 'l': 2, 'm': 1, 'u': 1, 'i': 1}, "quails"))
     # word_list = load_words()
     # play_game(word_list)
