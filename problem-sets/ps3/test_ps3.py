@@ -196,9 +196,9 @@ def test_wildcard(word_list):
     hand = {'a': 1, 'r': 1, 'e': 1, 'j': 2, 'm': 1, '*': 1}
     word = "e*m"
 
-    if is_valid_word(word, hand, word_list):
+    if not is_valid_word(word, hand, word_list):
         print("FAILURE: test_is_valid_word() with wildcards")
-        print("\tExpected False, but got True for word: '" + word + "' and hand:", hand)
+        print("\tExpected True, but got False for word: '" + word + "' and hand:", hand)
 
         failure = True
 
