@@ -37,7 +37,7 @@ class Int_set(object):
         mutates self so that it contains exactly the
         elemnts in self
         plus the elements in others."""
-        for num in other._vals[:]:
+        for num in other.vals[:]:
             if num not in self._vals:
                 self._vals.append(num)
 

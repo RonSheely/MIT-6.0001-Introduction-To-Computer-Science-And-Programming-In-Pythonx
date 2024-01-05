@@ -7,47 +7,47 @@ class Int_set(object):
 
     def __init__(self):
         """Create an empty set of integers"""
-        self._vals = []
+        self.vals = []
 
     def insert(self, e):
         """Assumes e is an integer and inserts e into self"""
-        if e not in self._vals:
-            self._vals.append(e)
+        if e not in self.vals:
+            self.vals.append(e)
 
     def member(self, e):
         """Assumes e is an integer
         Returns True if e is in self, and False otherwise"""
-        return e in self._vals
+        return e in self.vals
 
     def remove(self, e):
         """Assumes e is an integer and removes e from self
         Raises ValueError if e is not in self"""
         try:
-            self._vals.remove(e)
+            self.vals.remove(e)
         except ValueError:
             raise ValueError(str(e) + ' not found')
 
     def get_members(self):
         """Returns a list containing the elements of self._
         Nothing can be assumed about the order of the elements"""
-        return self._vals[:]
+        return self.vals[:]
 
     def __add__(self, other):
         """other is an Int_set
         mutates self so that it contains exactly the
         elemnts in self
         plus the elements in others."""
-        for num in other._vals[:]:
-            if num not in self._vals:
-                self._vals.append(num)
+        for num in other.vals[:]:
+            if num not in self.vals:
+                self.vals.append(num)
 
     def __str__(self):
         """Returns a string representation of self"""
-        if not self._vals:
+        if not self.vals:
             return '{}'
-        self._vals.sort()
+        self.vals.sort()
         result = ''
-        for e in self._vals:
+        for e in self.vals:
             result = result + str(e) + ','
         return f"{{{result[:-1]}}}"
 
