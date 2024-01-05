@@ -2,8 +2,8 @@
 to the Int_set class."""
 
 
-class Int_set(object):
-    """An Int_set is a set of integers"""
+class IntSet(object):
+    """An IntSet is a set of integers"""
 
     def __init__(self):
         """Create an empty set of integers"""
