@@ -3,7 +3,6 @@
 # Collaborators:
 # Time Spent: x:xx
 
-import string
 from ps4a import get_permutations
 
 
@@ -172,7 +171,7 @@ encryption_cases = [
 
 
 if __name__ == '__main__':
-    print("Starting encryption tests: \n\n")
+    print("\nStarting encryption tests: \n\n")
 
     for case in encryption_cases:
         msg = SubMessage(case[1])
