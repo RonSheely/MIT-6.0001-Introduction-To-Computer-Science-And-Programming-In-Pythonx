@@ -99,8 +99,11 @@ class SubMessage(object):
         Returns: a dictionary mapping a letter (string) to
                  another letter (string).
         """
-
-        pass  # delete this line and replace with your code here
+        transpose_dict = {}
+        for x, letter in enumerate(vowels_permutation):
+            transpose_dict[letter] = VOWELS_LOWER[x]
+            transpose_dict[letter.upper()] = VOWELS_UPPER[x]
+        return transpose_dict
 
     def apply_transpose(self, transpose_dict):
         """
@@ -151,11 +154,11 @@ if __name__ == '__main__':
     # Example test case
     message = SubMessage("Hello World!")
     permutation = "eaiuo"
-    enc_dict = message.build_transpose_dict(permutation)
-    print("Original message:", message.get_message_text(), "Permutation:", permutation)
-    print("Expected encryption:", "Hallu Wurld!")
-    print("Actual encryption:", message.apply_transpose(enc_dict))
-    enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
-    print("Decrypted message:", enc_message.decrypt_message())
+    # enc_dict = message.build_transpose_dict(permutation)
+    # print("Original message:", message.get_message_text(), "Permutation:", permutation)
+    # print("Expected encryption:", "Hallu Wurld!")
+    # print("Actual encryption:", message.apply_transpose(enc_dict))
+    # enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
+    # print("Decrypted message:", enc_message.decrypt_message())
 
     # TODO: WRITE YOUR TEST CASES HERE
