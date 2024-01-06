@@ -24,7 +24,6 @@ def load_words(file_name):
     Depending on the size of the word list, this function may
     take a while to finish.
     """
-    print("Loading word list from file...")
     # inFile: file
     inFile = open(file_name, 'r')
     # wordlist: list of strings
@@ -231,19 +230,17 @@ class CiphertextMessage(Message):
 
 
 if __name__ == '__main__':
-    #    #Example test case (PlaintextMessage)
-    #    plaintext = PlaintextMessage('hello', 2)
-    #    print('Expected Output: jgnnq')
-    #    print('Actual Output:', plaintext.get_message_text_encrypted())
-    #
-    #    #Example test case (CiphertextMessage)
-    #    ciphertext = CiphertextMessage('jgnnq')
-    #    print('Expected Output:', (24, 'hello'))
-    #    print('Actual Output:', ciphertext.decrypt_message())
+       #Example test case (PlaintextMessage)
+       plaintext = PlaintextMessage('hello', 2)
+       print('Expected Output: jgnnq')
+       print('Actual Output:', plaintext.get_message_text_encrypted())
+
+       #Example test case (CiphertextMessage)
+       ciphertext = CiphertextMessage('jgnnq')
+       print('Expected Output:', (24, 'hello'))
+       print('Actual Output:', ciphertext.decrypt_message())
 
     # TODO: WRITE YOUR TEST CASES HERE
 
     # TODO: best shift value and unencrypted story
 
-    x = Message("Hello, World!")
-    print(x.apply_shift(4))
