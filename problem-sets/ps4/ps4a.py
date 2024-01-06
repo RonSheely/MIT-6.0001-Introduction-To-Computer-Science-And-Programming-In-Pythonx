@@ -32,18 +32,14 @@ def get_permutations(sequence):
     """
     if len(sequence) == 1:
         return [sequence]
-    char = sequence[0]
     sample = get_permutations(sequence[1:])
     final_list = []
     for x in sample:
-        final_list = final_list + add_char(x, char)
+        final_list = final_list + add_char(x, sequence[0])
     return final_list
 
 
 if __name__ == '__main__':
-    example_input = 'abc'
-    print('Input:', example_input)
-    print('Expected Output:', ['abc', 'bca', 'cab', 'acb', 'cba', 'bac'])
-    print('Actual Output:', get_permutations(example_input))
+    print(get_permutations('weaver'))
 
 
