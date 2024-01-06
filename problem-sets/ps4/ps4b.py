@@ -4,13 +4,13 @@
 # Time Spent: x:xx
 import string
 
-ALPHABET_DICT = {'a': 27, 'b': 28, 'c': 29, 'd': 30, 'e': 31, 'f': 32, 'g': 33,
-                 'h': 34, 'i': 35, 'j': 36, 'k': 37, 'l': 38, 'm': 39, 'n': 40,
-                 'o': 41, 'p': 42, 'q': 43, 'r': 44, 's': 45, 't': 46, 'u': 47,
-                 'v': 48, 'w': 49, 'x': 50, 'y': 51, 'z': 52, 'A': 1, 'B': 2,
-                 'C': 3, 'D': 4, 'E': 5, 'F': 6, 'G': 7, 'H': 8, 'I': 9, 'J': 10,
-                 'K': 11, 'L': 12, 'M': 13, 'N': 14, 'O': 15, 'P': 16, 'Q': 17,
-                 'R': 18, 'S': 19, 'T': 20, 'U': 21, 'V': 22, 'W': 23, 'X': 24, 'Y': 25, 'Z': 26}
+alphabet = string.ascii_lowercase
+alphabet_upper = alphabet.upper()
+full_alphabet = alphabet_upper + alphabet
+ALPHABET_DICT = {}
+for x in range(len(full_alphabet)):
+    ALPHABET_DICT[full_alphabet[x]] = x + 1
+
 ALPHABET_DICT_SWAPPED = {v: k for k, v in ALPHABET_DICT.items()}
 
 
@@ -30,7 +30,6 @@ def load_words(file_name):
     wordlist = []
     for line in inFile:
         wordlist.extend([word.lower() for word in line.split(' ')])
-    print("  ", len(wordlist), "words loaded.")
     return wordlist
 
 
@@ -107,7 +106,7 @@ class Message(object):
         Returns: a dictionary mapping a letter (string) to
                  another letter (string).
         """
-        assert 0 <= shift < 26, "Letter shift must be (0 <= shift < 26)"
+        assert 0 <= shift < 52, "Letter shift must be (0 <= shift < 52)"
         shift_dict = dict()
         for letter, value in ALPHABET_DICT.items():
             new_value = value + shift
@@ -193,7 +192,7 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         """
-        assert 0 <= shift < 26, "Letter shift must be (0 <= shift < 26)"
+        assert 0 <= shift < 52, "Letter shift must be (0 <= shift < 52)"
         self.shift = shift
 
 
@@ -226,10 +225,20 @@ class CiphertextMessage(Message):
         Returns: a tuple of the best shift value used to decrypt the message
         and the decrypted message text using that shift value
         """
-        pass  # delete this line and replace with your code here
+        cipher_dict = {}
+        message = self.get_message_text()
+        for shift in range(52):
+            shifted_text = self.apply_shift(shift)
+            for word in shifted_text.split():
+                if word in self.get_valid_words():
+                    key = (shift, shifted_text)
+                    cipher_dict[key] = cipher_dict.get(key, 0) + 1
+        return max(cipher_dict)
 
 
 if __name__ == '__main__':
+    x = CiphertextMessage("jgnnq")
+    print(x.decrypt_message())
     # Example test case (PlaintextMessage)
     plaintext = PlaintextMessage('hello', 2)
     print('Expected Output: jgnnq')
@@ -240,8 +249,6 @@ if __name__ == '__main__':
     print('Expected Output:', (24, 'hello'))
     print('Actual Output:', ciphertext.decrypt_message())
 
-
-# TODO: WRITE decrypt_message METHOD IN CIPHERTEXTMESSAGE CLASS
 
 # TODO: WRITE YOUR TEST CASES HERE
 
