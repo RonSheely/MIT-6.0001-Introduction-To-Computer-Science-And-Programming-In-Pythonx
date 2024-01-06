@@ -112,8 +112,13 @@ class SubMessage(object):
         Returns: an encrypted version of the message text, based
         on the dictionary
         """
-
-        pass  # delete this line and replace with your code here
+        transpose_text = []
+        for char in self.get_message_text():
+            if char in transpose_dict.keys():
+                transpose_text.append(transpose_dict[char])
+            else:
+                transpose_text.append(char)
+        return ''.join(transpose_text)
 
 
 class EncryptedSubMessage(SubMessage):
@@ -154,10 +159,10 @@ if __name__ == '__main__':
     # Example test case
     message = SubMessage("Hello World!")
     permutation = "eaiuo"
-    # enc_dict = message.build_transpose_dict(permutation)
-    # print("Original message:", message.get_message_text(), "Permutation:", permutation)
-    # print("Expected encryption:", "Hallu Wurld!")
-    # print("Actual encryption:", message.apply_transpose(enc_dict))
+    enc_dict = message.build_transpose_dict(permutation)
+    print("Original message:", message.get_message_text(), "Permutation:", permutation)
+    print("Expected encryption:", "Hallu Wurld!")
+    print("Actual encryption:", message.apply_transpose(enc_dict))
     # enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
     # print("Decrypted message:", enc_message.decrypt_message())
 
