@@ -164,15 +164,29 @@ class EncryptedSubMessage(SubMessage):
         return [k for k, v in tested_permutations.items() if v == max(tested_permutations.values())][0]
 
 
-if __name__ == '__main__':
-    # Example test case
-    message = SubMessage("Hello World!")
-    permutation = "eaiuo"
-    enc_dict = message.build_transpose_dict(permutation)
-    print("Original message:", message.get_message_text(), "Permutation:", permutation)
-    print("Expected encryption:", "Hallu Wurld!")
-    print("Actual encryption:", message.apply_transpose(enc_dict))
-    enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
-    print("Decrypted message:", enc_message.decrypt_message())
+encryption_cases = [
+    ("eaiuo", "Hello World!", "Hallu Wurld!"),
+    ("aeiou", "Python is fun!", "Python is fun!"),
+    ("ouaei", "Programming is cool", "Pragrimmung us caal"),
+]
 
-    # TODO: WRITE YOUR TEST CASES HERE
+
+if __name__ == '__main__':
+    print("Starting encryption tests: \n\n")
+
+    for case in encryption_cases:
+        msg = SubMessage(case[1])
+        trans_dict = msg.build_transpose_dict(case[0])
+        encryption = msg.apply_transpose(trans_dict)
+        print("Original message:", msg.get_message_text(), "Permuation:", case[0])
+        print("Expected:", case[2], "Actual:", encryption)
+        print("Results:", case[2] == encryption)
+
+    print("\nStarting decryption tests: \n\n")
+
+    for decryption_case in encryption_cases:
+        msg = EncryptedSubMessage(decryption_case[2])
+        decryption = msg.decrypt_message()
+        print("Original encrypted message:", msg.get_message_text())
+        print("Expected:", decryption_case[1], "Actual:", decryption)
+        print("Results:", decryption_case[1] == decryption)
