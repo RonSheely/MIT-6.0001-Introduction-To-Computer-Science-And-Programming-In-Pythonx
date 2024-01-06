@@ -226,30 +226,15 @@ class CiphertextMessage(Message):
         and the decrypted message text using that shift value
         """
         cipher_dict = {}
-        message = self.get_message_text()
         for shift in range(52):
             shifted_text = self.apply_shift(shift)
             for word in shifted_text.split():
-                if word in self.get_valid_words():
+                if word.lower() in self.get_valid_words():
                     key = (shift, shifted_text)
                     cipher_dict[key] = cipher_dict.get(key, 0) + 1
-        return max(cipher_dict)
+        return [k for k, v in cipher_dict.items() if v == max(cipher_dict.values())][0]
 
 
 if __name__ == '__main__':
-    x = CiphertextMessage("jgnnq")
+    x = CiphertextMessage(get_story_string())
     print(x.decrypt_message())
-    # Example test case (PlaintextMessage)
-    plaintext = PlaintextMessage('hello', 2)
-    print('Expected Output: jgnnq')
-    print('Actual Output:', plaintext.get_message_text_encrypted())
-
-    # Example test case (CiphertextMessage)
-    ciphertext = CiphertextMessage('jgnnq')
-    print('Expected Output:', (24, 'hello'))
-    print('Actual Output:', ciphertext.decrypt_message())
-
-
-# TODO: WRITE YOUR TEST CASES HERE
-
-# TODO: best shift value and unencrypted story
