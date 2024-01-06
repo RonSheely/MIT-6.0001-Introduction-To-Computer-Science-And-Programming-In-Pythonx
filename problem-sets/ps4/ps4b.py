@@ -194,7 +194,8 @@ class PlaintextMessage(Message):
 
         Returns: nothing
         """
-        pass  # delete this line and replace with your code here
+        assert 0 <= shift < 26, "Letter shift must be (0 <= shift < 26)"
+        self.shift = shift
 
 
 class CiphertextMessage(Message):
