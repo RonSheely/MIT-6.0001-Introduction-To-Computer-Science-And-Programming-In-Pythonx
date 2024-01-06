@@ -61,7 +61,8 @@ class SubMessage(object):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         """
-        pass  # delete this line and replace with your code here
+        self.message_text = text
+        self.valid_words = load_words(WORDLIST_FILENAME)
 
     def get_message_text(self):
         """
@@ -69,7 +70,7 @@ class SubMessage(object):
 
         Returns: self.message_text
         """
-        pass  # delete this line and replace with your code here
+        return self.message_text
 
     def get_valid_words(self):
         """
@@ -78,7 +79,7 @@ class SubMessage(object):
 
         Returns: a COPY of self.valid_words
         """
-        pass  # delete this line and replace with your code here
+        return self.valid_words[:]
 
     def build_transpose_dict(self, vowels_permutation):
         """
@@ -88,7 +89,7 @@ class SubMessage(object):
         The dictionary maps every uppercase and lowercase letter to an
         uppercase and lowercase letter, respectively. Vowels are shuffled
         according to vowels_permutation. The first letter in vowels_permutation
-        corresponds to a the second to e, and so on in the order a, e, i, o, u.
+        corresponds to a second to e, and so on in the order a, e, i, o, u.
         The consonants remain the same. The dictionary should have 52
         keys of all the uppercase letters and all the lowercase letters.
 
