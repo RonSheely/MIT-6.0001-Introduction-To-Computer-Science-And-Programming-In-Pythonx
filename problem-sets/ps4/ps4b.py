@@ -3,8 +3,6 @@
 # Collaborators:
 # Time Spent: x:xx
 
-import string
-
 
 def load_words(file_name):
     """
@@ -66,7 +64,8 @@ class Message(object):
             self.message_text (string, determined by input text)
             self.valid_words (list, determined using helper function load_words)
         """
-        pass
+        self.message_text = text
+        self.valid_words = load_words(WORDLIST_FILENAME)
 
     def get_message_text(self):
         """
@@ -74,7 +73,7 @@ class Message(object):
 
         Returns: self.message_text
         """
-        pass
+        return self.message_text
 
     def get_valid_words(self):
         """
@@ -83,7 +82,7 @@ class Message(object):
 
         Returns: a COPY of self.valid_words
         """
-        pass  # delete this line and replace with your code here
+        return self.valid_words[:]
 
     def build_shift_dict(self, shift):
         """
@@ -136,7 +135,7 @@ class PlaintextMessage(Message):
 
     def get_shift(self):
         """
-        Used to safely access self.shift outside of the class
+        Used to safely access self.shift outside the class
 
         Returns: self.shift
         """
@@ -144,7 +143,7 @@ class PlaintextMessage(Message):
 
     def get_encryption_dict(self):
         """
-        Used to safely access a copy self.encryption_dict outside of the class
+        Used to safely access a copy self.encryption_dict outside the class
 
         Returns: a COPY of self.encryption_dict
         """
@@ -152,7 +151,7 @@ class PlaintextMessage(Message):
 
     def get_message_text_encrypted(self):
         """
-        Used to safely access self.message_text_encrypted outside of the class
+        Used to safely access self.message_text_encrypted outside the class
 
         Returns: self.message_text_encrypted
         """
