@@ -152,7 +152,16 @@ class EncryptedSubMessage(SubMessage):
 
         Hint: use your function from Part 4A
         """
-        pass  # delete this line and replace with your code here
+        permutations_list = get_permutations(VOWELS_LOWER)
+        tested_permutations = {}
+        for perm in permutations_list:
+            test_dict = self.build_transpose_dict(perm)
+            test_dict = {v: k for k, v in test_dict.items()}
+            test_text = self.apply_transpose(test_dict)
+            for word in test_text.split():
+                if is_word(self.get_valid_words(), word) is True:
+                    tested_permutations[test_text] = tested_permutations.get(test_text, 0) + 1
+        return [k for k, v in tested_permutations.items() if v == max(tested_permutations.values())][0]
 
 
 if __name__ == '__main__':
@@ -163,7 +172,7 @@ if __name__ == '__main__':
     print("Original message:", message.get_message_text(), "Permutation:", permutation)
     print("Expected encryption:", "Hallu Wurld!")
     print("Actual encryption:", message.apply_transpose(enc_dict))
-    # enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
-    # print("Decrypted message:", enc_message.decrypt_message())
+    enc_message = EncryptedSubMessage(message.apply_transpose(enc_dict))
+    print("Decrypted message:", enc_message.decrypt_message())
 
     # TODO: WRITE YOUR TEST CASES HERE
