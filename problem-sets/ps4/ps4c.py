@@ -90,8 +90,7 @@ class SubMessage(object):
         uppercase and lowercase letter, respectively. Vowels are shuffled
         according to vowels_permutation. The first letter in vowels_permutation
         corresponds to a second to e, and so on in the order a, e, i, o, u.
-        The consonants remain the same. The dictionary should have 52
-        keys of all the uppercase letters and all the lowercase letters.
+        The consonants remain the same.
 
         Example: When input "eaiuo":
         Mapping is a->e, e->a, i->i, o->u, u->o
