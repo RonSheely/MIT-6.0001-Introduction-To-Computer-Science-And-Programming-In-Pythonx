@@ -94,9 +94,7 @@ class Trigger(object):
         raise NotImplementedError
 
 
-# PHRASE TRIGGERS
 
-# Problem 2
 class PhraseTrigger(Trigger):
 
     def __init__(self, phrase):
@@ -122,7 +120,6 @@ class PhraseTrigger(Trigger):
         # return self.phrase in text             # I prefer the output this gives over what's stated in the assignment
 
 
-# Problem 3
 class TitleTrigger(PhraseTrigger):
 
     def __init__(self, phrase):
@@ -133,7 +130,6 @@ class TitleTrigger(PhraseTrigger):
         return self.is_phrase_in(title)
 
 
-# Problem 4
 class DescriptionTrigger(PhraseTrigger):
 
     def __init__(self, phrase):
@@ -143,16 +139,32 @@ class DescriptionTrigger(PhraseTrigger):
         description = story.get_description()
         return self.is_phrase_in(description)
 
-# TIME TRIGGERS
 
-# Problem 5
-# TODO: TimeTrigger
-# Constructor:
-#        Input: Time has to be in EST and in the format of "%d %b %Y %H:%M:%S".
-#        Convert time from string to a datetime before saving it as an attribute.
+class TimeTrigger(Trigger):
+
+    def __init__(self, input_time):
+        """input_time must be in the format of %d %b %Y %H:%M:%S
+           example: 3 Oct 2016 17:00:10"""
+        self.datetime_obj = datetime.strptime(input_time.strip(), "%d %b %Y %H:%M:%S")
+
 
 # Problem 6
-# TODO: BeforeTrigger and AfterTrigger
+class BeforeTrigger(TimeTrigger):
+
+    def __init__(self, input_time):
+        super().__init__(input_time)
+
+    def evaluate(self, story):
+        return story.get_pubdate() < self.datetime_obj
+
+
+class AfterTrigger(TimeTrigger):
+
+    def __init__(self, input_time):
+        super().__init__(input_time)
+
+    def evaluate(self, story):
+        return story.get_pubdate() > self.datetime_obj
 
 
 # COMPOSITE TRIGGERS
@@ -276,9 +288,8 @@ def main_thread(master):
         print(e)
 
 
-purp = NewsStory("", "The purple cow is soft and cuddly.", "", "", datetime.now())
-x = TitleTrigger("Purple cow")
-print(x.evaluate(purp))
+x = TimeTrigger("3 Dec 2016 17:00:10")
+print(x.datetime_obj)
 
 if __name__ == '__main__':
     ...
