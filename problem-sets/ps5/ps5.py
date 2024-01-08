@@ -106,12 +106,11 @@ class PhraseTrigger(Trigger):
 
     def is_phrase_in(self, text):
         text = text.lower()
-        text_list = []
-        for word in text.split():
-            for punc in string.punctuation:
-                word = word.strip(punc)
-            text_list.append(word)
-        text = ' '.join(text_list)
+        text_list = list(text)
+        for i, char in enumerate(text):
+            if char in string.punctuation:
+                text_list[i] = " "
+        text = " ".join("".join(text_list).split())
         return self.phrase in text
 
 
@@ -255,7 +254,7 @@ def main_thread(master):
 
 
 x = PhraseTrigger("PURPLE COW")
-print(x.is_phrase_in("purple@#$%cow"))
+print(x.is_phrase_in("'Purple cows are cool!"))
 
 if __name__ == '__main__':
     ...
