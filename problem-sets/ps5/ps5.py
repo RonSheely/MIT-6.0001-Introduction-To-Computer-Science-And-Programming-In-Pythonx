@@ -123,7 +123,15 @@ class PhraseTrigger(Trigger):
 
 
 # Problem 3
-# TODO: TitleTrigger
+class TitleTrigger(PhraseTrigger):
+
+    def __init__(self, phrase):
+        super().__init__(phrase)
+
+    def evaluate(self, story):
+        title = story.get_title()
+        return self.is_phrase_in(title)
+
 
 # Problem 4
 # TODO: DescriptionTrigger
@@ -261,8 +269,9 @@ def main_thread(master):
         print(e)
 
 
-x = PhraseTrigger("PURPLE COW")
-print(x.is_phrase_in("The purple cow is soft and cuddly."))
+purp = NewsStory("", "The purple cow is soft and cuddly.", "", "", datetime.now())
+x = TitleTrigger("Purple cow")
+print(x.evaluate(purp))
 
 if __name__ == '__main__':
     ...
