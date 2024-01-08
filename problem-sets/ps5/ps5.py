@@ -79,6 +79,7 @@ class NewsStory(object):
     def get_pubdate(self):
         return self.pubdate
 
+
 # ======================
 # Triggers
 # ======================
@@ -96,7 +97,23 @@ class Trigger(object):
 # PHRASE TRIGGERS
 
 # Problem 2
-# TODO: PhraseTrigger
+class PhraseTrigger(Trigger):
+
+    def __init__(self, phrase):
+        assert not any(char in string.punctuation for char in phrase), "Phrase must not contain punctuation"
+        self.phrase = phrase.lower()
+        self.phrase_words = self.phrase.split()
+
+    def is_phrase_in(self, text):
+        text = text.lower()
+        text_list = []
+        for word in text.split():
+            for punc in string.punctuation:
+                word = word.strip(punc)
+            text_list.append(word)
+        text = ' '.join(text_list)
+        return self.phrase in text
+
 
 # Problem 3
 # TODO: TitleTrigger
@@ -169,7 +186,7 @@ def read_trigger_config(filename):
     # line is the list of lines that you need to parse and for which you need
     # to build triggers
 
-    print(lines)  # for now, print it so you see what it contains!
+    print(lines)  # for now, print it, so you see what it contains!
 
 
 SLEEPTIME = 120  # seconds -- how often we poll
@@ -220,10 +237,10 @@ def main_thread(master):
         while True:
             print("Polling . . .", end=' ')
             # Get stories from Google's Top Stories RSS news feed
-            stories = process("http://news.google.com/news?output=rss")
+            stories = process("https://news.google.com/news?output=rss")
 
             # Get stories from Yahoo's Top Stories RSS news feed
-            stories.extend(process("http://news.yahoo.com/rss/topstories"))
+            stories.extend(process("https://news.yahoo.com/rss/topstories"))
 
             stories = filter_stories(stories, triggerlist)
 
@@ -237,9 +254,13 @@ def main_thread(master):
         print(e)
 
 
+x = PhraseTrigger("PURPLE COW")
+print(x.is_phrase_in("purple@#$%cow"))
+
 if __name__ == '__main__':
-    root = Tk()
-    root.title("Some RSS parser")
-    t = threading.Thread(target=main_thread, args=(root,))
-    t.start()
-    root.mainloop()
+    ...
+    # root = Tk()
+    # root.title("Some RSS parser")
+    # t = threading.Thread(target=main_thread, args=(root,))
+    # t.start()
+    # root.mainloop()
