@@ -80,10 +80,6 @@ class NewsStory(object):
         return self.pubdate
 
 
-# ======================
-# Triggers
-# ======================
-
 class Trigger(object):
     def evaluate(self, story):
         """
@@ -92,7 +88,6 @@ class Trigger(object):
         """
         # DO NOT CHANGE THIS!
         raise NotImplementedError
-
 
 
 class PhraseTrigger(Trigger):
@@ -148,7 +143,6 @@ class TimeTrigger(Trigger):
         self.datetime_obj = datetime.strptime(input_time.strip(), "%d %b %Y %H:%M:%S")
 
 
-# Problem 6
 class BeforeTrigger(TimeTrigger):
 
     def __init__(self, input_time):
@@ -166,8 +160,6 @@ class AfterTrigger(TimeTrigger):
     def evaluate(self, story):
         return story.get_pubdate() > self.datetime_obj
 
-
-# COMPOSITE TRIGGERS
 
 class NotTrigger(Trigger):
 
@@ -248,72 +240,64 @@ SLEEPTIME = 120  # seconds -- how often we poll
 def main_thread(master):
     # A sample trigger list - you might need to change the phrases to correspond
     # to what is currently in the news
-    try:
-        t1 = TitleTrigger("election")
-        t2 = DescriptionTrigger("Trump")
-        t3 = DescriptionTrigger("Clinton")
-        t4 = AndTrigger(t2, t3)
-        triggerlist = [t1, t4]
+    t1 = TitleTrigger("election")
+    t2 = DescriptionTrigger("Trump")
+    t3 = DescriptionTrigger("Clinton")
+    t4 = AndTrigger(t2, t3)
+    triggerlist = [t1, t4]
 
-        # Problem 11
-        # TODO: After implementing read_trigger_config, uncomment this line 
-        # triggerlist = read_trigger_config('triggers.txt')
+    # Problem 11
+    # TODO: After implementing read_trigger_config, uncomment this line
+    # triggerlist = read_trigger_config('triggers.txt')
 
-        # HELPER CODE - you don't need to understand this!
-        # Draws the popup window that displays the filtered stories
-        # Retrieves and filters the stories from the RSS feeds
-        frame = Frame(master)
-        frame.pack(side=BOTTOM)
-        scrollbar = Scrollbar(master)
-        scrollbar.pack(side=RIGHT, fill=Y)
+    # HELPER CODE - you don't need to understand this!
+    # Draws the popup window that displays the filtered stories
+    # Retrieves and filters the stories from the RSS feeds
+    frame = Frame(master)
+    frame.pack(side=BOTTOM)
+    scrollbar = Scrollbar(master)
+    scrollbar.pack(side=RIGHT, fill=Y)
 
-        t = "Google & Yahoo Top News"
-        title = StringVar()
-        title.set(t)
-        ttl = Label(master, textvariable=title, font=("Helvetica", 18))
-        ttl.pack(side=TOP)
-        cont = Text(master, font=("Helvetica", 14), yscrollcommand=scrollbar.set)
-        cont.pack(side=BOTTOM)
-        cont.tag_config("title", justify='center')
-        button = Button(frame, text="Exit", command=root.destroy)
-        button.pack(side=BOTTOM)
-        guidShown = []
+    t = "Google & Yahoo Top News"
+    title = StringVar()
+    title.set(t)
+    ttl = Label(master, textvariable=title, font=("Helvetica", 18))
+    ttl.pack(side=TOP)
+    cont = Text(master, font=("Helvetica", 14), yscrollcommand=scrollbar.set)
+    cont.pack(side=BOTTOM)
+    cont.tag_config("title", justify='center')
+    button = Button(frame, text="Exit", command=root.destroy)
+    button.pack(side=BOTTOM)
+    guidShown = []
 
-        def get_cont(newstory):
-            if newstory.get_guid() not in guidShown:
-                cont.insert(END, newstory.get_title() + "\n", "title")
-                cont.insert(END, "\n---------------------------------------------------------------\n", "title")
-                cont.insert(END, newstory.get_description())
-                cont.insert(END, "\n*********************************************************************\n", "title")
-                guidShown.append(newstory.get_guid())
+    def get_cont(newstory):
+        if newstory.get_guid() not in guidShown:
+            cont.insert(END, newstory.get_title() + "\n", "title")
+            cont.insert(END, "\n---------------------------------------------------------------\n", "title")
+            cont.insert(END, newstory.get_description())
+            cont.insert(END, "\n*********************************************************************\n", "title")
+            guidShown.append(newstory.get_guid())
 
-        while True:
-            print("Polling . . .", end=' ')
-            # Get stories from Google's Top Stories RSS news feed
-            stories = process("https://news.google.com/news?output=rss")
+    while True:
+        print("Polling . . .", end=' ')
+        # Get stories from Google's Top Stories RSS news feed
+        stories = process("https://news.google.com/news?output=rss")
 
-            # Get stories from Yahoo's Top Stories RSS news feed
-            stories.extend(process("https://news.yahoo.com/rss/topstories"))
+        # Get stories from Yahoo's Top Stories RSS news feed
+        stories.extend(process("https://news.yahoo.com/rss/topstories"))
 
-            stories = filter_stories(stories, triggerlist)
+        stories = filter_stories(stories, triggerlist)
 
-            list(map(get_cont, stories))
-            scrollbar.config(command=cont.yview)
+        list(map(get_cont, stories))
+        scrollbar.config(command=cont.yview)
 
-            print("Sleeping...")
-            time.sleep(SLEEPTIME)
+        print("Sleeping...")
+        time.sleep(SLEEPTIME)
 
-    except Exception as e:
-        print(e)
-
-
-x = TimeTrigger("3 Dec 2016 17:00:10")
-print(x.datetime_obj)
 
 if __name__ == '__main__':
-    ...
-    # root = Tk()
-    # root.title("Some RSS parser")
-    # t = threading.Thread(target=main_thread, args=(root,))
-    # t.start()
-    # root.mainloop()
+    root = Tk()
+    root.title("Some RSS parser")
+    t = threading.Thread(target=main_thread, args=(root,))
+    t.start()
+    root.mainloop()
