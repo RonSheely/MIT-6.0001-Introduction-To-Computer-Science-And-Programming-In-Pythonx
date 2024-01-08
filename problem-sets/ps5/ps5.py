@@ -212,10 +212,11 @@ def filter_stories(stories, triggerlist):
     return filtered_stories
 
 
-# ======================
-# User-Specified Triggers
-# ======================
-# Problem 11
+TRIGGERS_CONSTANT = {"TITLE": TitleTrigger, "DESCRIPTION": DescriptionTrigger,
+                     "AFTER": AfterTrigger, "BEFORE": BeforeTrigger, "NOT": NotTrigger,
+                     "AND": AndTrigger, "OR": OrTrigger}
+
+
 def read_trigger_config(filename):
     """
     filename: the name of a trigger configuration file
@@ -223,8 +224,6 @@ def read_trigger_config(filename):
     Returns: a list of trigger objects specified by the trigger configuration
         file.
     """
-    # We give you the code to read in the file and eliminate blank lines and
-    # comments. You don't need to know how it works for now!
     trigger_file = open(filename, 'r')
     lines = []
     for line in trigger_file:
@@ -232,11 +231,19 @@ def read_trigger_config(filename):
         if not (len(line) == 0 or line.startswith('//')):
             lines.append(line)
 
-    # TODO: Problem 11
-    # line is the list of lines that you need to parse and for which you need
-    # to build triggers
-
-    print(lines)  # for now, print it, so you see what it contains!
+    known_triggers = {}
+    added_triggers = []
+    for command_entry in lines:
+        command_entry = command_entry.split(",")
+        if command_entry[1] in ["AND", "NOT", "OR"]:
+            known_triggers[command_entry[0]] = TRIGGERS_CONSTANT[command_entry[1]](
+                known_triggers[command_entry[2]], known_triggers[command_entry[3]])
+        elif command_entry[0] == "ADD":
+            for command in command_entry[1:]:
+                added_triggers.append(known_triggers[command])
+        else:
+            known_triggers[command_entry[0]] = TRIGGERS_CONSTANT[command_entry[1]](command_entry[2])
+    return added_triggers
 
 
 SLEEPTIME = 120  # seconds -- how often we poll
@@ -246,16 +253,7 @@ def main_thread(master):
     # A sample trigger list - you might need to change the phrases to correspond
     # to what is currently in the news
     try:
-        t1 = TitleTrigger("election")
-        t2 = DescriptionTrigger("Trump")
-        t3 = DescriptionTrigger("Clinton")
-        t4 = AndTrigger(t2, t3)
-        triggerlist = [t1, t4]
-
-        # Problem 11
-        # TODO: After implementing read_trigger_config, uncomment this line
-        # triggerlist = read_trigger_config('triggers.txt')
-
+        triggerlist = read_trigger_config('triggers.txt')
         # HELPER CODE - you don't need to understand this!
         # Draws the popup window that displays the filtered stories
         # Retrieves and filters the stories from the RSS feeds
