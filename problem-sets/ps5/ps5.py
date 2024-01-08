@@ -110,8 +110,16 @@ class PhraseTrigger(Trigger):
         for i, char in enumerate(text):
             if char in string.punctuation:
                 text_list[i] = " "
-        text = " ".join("".join(text_list).split())
-        return self.phrase in text
+        text = "".join(text_list).split()
+        for y, word in enumerate(text):
+            if word in self.phrase_words:
+                for i in range(len(self.phrase_words)):
+                    if text[y + i] != self.phrase_words[i]:
+                        return False
+                return True
+        return False
+        # text = " ".join("".join(text_list).split())   # This is how I would implement this code
+        # return self.phrase in text             # I prefer the output this gives over what's stated in the assignment
 
 
 # Problem 3
@@ -254,7 +262,7 @@ def main_thread(master):
 
 
 x = PhraseTrigger("PURPLE COW")
-print(x.is_phrase_in("'Purple cows are cool!"))
+print(x.is_phrase_in("The purple cow is soft and cuddly."))
 
 if __name__ == '__main__':
     ...
