@@ -3,10 +3,10 @@
 Handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds
 
 Visit https://code.google.com/p/feedparser/ for the latest version
-Visit http://packages.python.org/feedparser/ for the latest documentation
+Visit https://packages.python.org/feedparser/ for the latest documentation
 
 Required: Python 2.4 or later
-Recommended: iconv_codec <http://cjkpython.i18n.org/>
+Recommended: iconv_codec <https://cjkpython.i18n.org/>
 """
 
 __version__ = "5.2.1"
@@ -35,17 +35,17 @@ INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
 CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE."""
-__author__ = "Mark Pilgrim <http://diveintomark.org/>"
-__contributors__ = ["Jason Diamond <http://injektilo.org/>",
-                    "John Beimler <http://john.beimler.org/>",
-                    "Fazal Majid <http://www.majid.info/mylos/weblog/>",
-                    "Aaron Swartz <http://aaronsw.com/>",
-                    "Kevin Marks <http://epeus.blogspot.com/>",
-                    "Sam Ruby <http://intertwingly.net/>",
-                    "Ade Oshineye <http://blog.oshineye.com/>",
-                    "Martin Pool <http://sourcefrog.net/>",
-                    "Kurt McKee <http://kurtmckee.org/>",
-                    "Bernd Schlapsi <https://github.com/brot>",]
+__author__ = "Mark Pilgrim <https://diveintomark.org/>"
+__contributors__ = ["Jason Diamond <https://injektilo.org/>",
+                    "John Beimler <https://john.beimler.org/>",
+                    "Fazal Majid <https://www.majid.info/mylos/weblog/>",
+                    "Aaron Swartz <https://aaronsw.com/>",
+                    "Kevin Marks <https://epeus.blogspot.com/>",
+                    "Sam Ruby <https://intertwingly.net/>",
+                    "Ade Oshineye <https://blog.oshineye.com/>",
+                    "Martin Pool <https://sourcefrog.net/>",
+                    "Kurt McKee <https://kurtmckee.org/>",
+                    "Bernd Schlapsi <https://github.com/brot>", ]
 
 # HTTP "User-Agent" header to send to servers when downloading feeds.
 # If you are embedding feedparser in a larger application, you should
@@ -54,7 +54,8 @@ USER_AGENT = "UniversalFeedParser/%s +https://code.google.com/p/feedparser/" % _
 
 # HTTP "Accept" header to send to servers when downloading feeds.  If you don't
 # want to send an Accept header, set this to None.
-ACCEPT_HEADER = "application/atom+xml,application/rdf+xml,application/rss+xml,application/x-netcdf,application/xml;q=0.9,text/xml;q=0.2,*/*;q=0.1"
+ACCEPT_HEADER = ("application/atom+xml,application/rdf+xml,application/rss+xml,application/x-netcdf,"
+                 "application/xml;q=0.9,text/xml;q=0.2,*/*;q=0.1")
 
 # List of preferred XML parsers, by SAX driver name.  These will be tried first,
 # but if they're not installed, Python will keep searching through its own list
@@ -3652,7 +3653,7 @@ def convert_to_utf8(http_headers, data):
     # try: HTTP encoding, declared XML encoding, encoding sniffed from BOM
     for proposed_encoding in (rfc3023_encoding, xml_encoding, bom_encoding,
                               lazy_chardet_encoding, 'utf-8', 'windows-1252', 'iso-8859-2'):
-        if isinstance(proposed_encoding, collections.Callable):
+        if isinstance(proposed_encoding, collections.abc.Callable):
             proposed_encoding = proposed_encoding()
         if not proposed_encoding:
             continue
