@@ -7,11 +7,11 @@
 Information
 ===========
 
-- All problem sets assigned from the [Course](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/ "Course")
+- All [problem sets](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/main/problem-sets "problem sets") assigned from the course.
   
   ![ps](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/assets/101545981/319a7ea4-c28f-47e5-a3fc-e99e1e3130d1)
 
-- All finger exercises required by [Introduction to Computation and Programming Using Python, Third Edition](https://mitpress.mit.edu/9780262542364/introduction-to-computation-and-programming-using-python/ "Introduction to Computation and Programming Using Python, Third Edition")
+- All [finger exercises](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/main/finger-exercises "finger exercises") required by [Introduction to Computation and Programming Using Python, Third Edition](https://mitpress.mit.edu/9780262542364/introduction-to-computation-and-programming-using-python/ "Introduction to Computation and Programming Using Python, Third Edition")
 
   ![fe](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/assets/101545981/ea055924-256d-409f-88f4-521eb183ef4a)
   
