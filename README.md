@@ -1,6 +1,9 @@
-![](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/assets/101545981/92d1fdb8-ca95-4a98-828a-9c7db4c2e83a)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ![Mit Projec1t](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/assets/101545981/36c78775-2b63-4543-af6e-33858f4b0455)
+
 
   
+
+
 #### &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; **This personal repo consists of all the work required to complete the course**
  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; [MIT 6.0001 OpenCourseWare Introduction To Computer Science And Programming In Python](https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/ "MIT 6.0001 OpenCourseWare Introduction To Computer Science And Programming In Python")
   
