@@ -10,19 +10,28 @@
 Overview
 ===========
 
-- All [problem sets](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/main/problem-sets "problem sets") assigned from the course.
+- All `problem sets` assigned for the course. The source code can be found [here]().
   
   - [Problem Set 0]() (Development Environment and Configuration)
-  - [Problem Set 1]() ()
-  - [Problem Set 2]() ()
-  - [Problem Set 3]() ()
-  - [Problem Set 4]() ()
-  - [Problem Set 5]() ()
+  - [Problem Set 1]() (Lorem Ipsum)
+  - [Problem Set 2]() (Lorem Ipsum)
+  - [Problem Set 3]() (Lorem Ipsum)
+  - [Problem Set 4]() (Lorem Ipsum)
+  - [Problem Set 5]() (Lorem Ipsum)
 
-- All [finger exercises](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/main/finger-exercises "finger exercises") required by [Introduction to Computation and Programming Using Python, Third Edition](https://mitpress.mit.edu/9780262542364/introduction-to-computation-and-programming-using-python/ "Introduction to Computation and Programming Using Python, Third Edition")
+- All `finger exercises` required by the book, which was assigned to this course. <br>
+  Some chapters did not require finger exercises.  
 
-  ![fe](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/assets/101545981/ea055924-256d-409f-88f4-521eb183ef4a)
-  
+  - [Chapter 2]()
+  - [Chapter 3]()
+  - [Chapter 4]()
+  - [Chapter 5]()
+  - [Chapter 6]()
+  - [Chapter 7]()
+  - [Chapter 9]()
+  - [Chapter 10]()
+  - [Chapter 11]()
+  - [Chapter 12]()
   
 Problem Sets
 ============= 
@@ -35,10 +44,20 @@ Problem Sets
 
 - **Problem Set 1**
 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 - **Problem Set 2**
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 - **Problem Set 3**
 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 - **Problem Set 4**
 
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 - **Problem Set 5**
+
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
