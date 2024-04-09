@@ -12,12 +12,12 @@ Overview
 
 - All `problem sets` assigned for the course. The source code can be found [here]().
   
-  - [Problem Set 0]() (Development Environment and Configuration)
-  - [Problem Set 1]() (Lorem Ipsum)
-  - [Problem Set 2]() (Lorem Ipsum)
-  - [Problem Set 3]() (Lorem Ipsum)
-  - [Problem Set 4]() (Lorem Ipsum)
-  - [Problem Set 5]() (Lorem Ipsum)
+  - [Problem Set 0]() (Environment Configuration)
+  - [Problem Set 1]() (Housing Calculations)
+  - [Problem Set 2]() (Hangman)
+  - [Problem Set 3]() (Word Game)
+  - [Problem Set 4]() (String Permutation & Cyphers)
+  - [Problem Set 5]() (News API Filter)
 
 - All `finger exercises` required by the book, which was assigned to this course. <br>
   Some chapters did not require finger exercises.  
