@@ -43,7 +43,7 @@ Problem Sets
   environment and wrote some simple scripts to ensure my enviroment <br>
   was properly configured. 
   
-  [PDF Assignment]() | [Source Code]()
+  [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/a2884464941df60b5cef82f8209cb673fa529d20/problem-sets/ps0/ps0_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/a2884464941df60b5cef82f8209cb673fa529d20/problem-sets/ps0)
 
 <a name="ps1"></a>
 - **Problem Set 1**
