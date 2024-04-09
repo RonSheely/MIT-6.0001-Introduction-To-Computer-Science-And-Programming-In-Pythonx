@@ -12,7 +12,7 @@ Overview
 
 - All `problem sets` assigned for the course. The source code can be found [here]().
   
-  - [Problem Set 0]() (Environment Configuration)
+  - [Problem Set 0](#ps0) (Environment Configuration)
   - [Problem Set 1]() (Housing Calculations)
   - [Problem Set 2]() (Hangman)
   - [Problem Set 3]() (Word Game)
@@ -36,7 +36,7 @@ Overview
 Problem Sets
 ============= 
 
-- **Problem Set 0 - Development Environment and Configuration**
+<a name="ps0">- **Problem Set 0 - Development Environment and Configuration**</a>
 
   In this problem set, I set up the basics of my development <br>
   environment and wrote some simple scripts to ensure my enviroment <br>
