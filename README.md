@@ -13,11 +13,11 @@ Overview
 - All `problem sets` assigned for the course. The source code can be found [here]().
   
   - [Problem Set 0](#ps0) (Environment Configuration)
-  - [Problem Set 1]() (Housing Calculations)
-  - [Problem Set 2]() (Hangman)
-  - [Problem Set 3]() (Word Game)
-  - [Problem Set 4]() (String Permutation & Cyphers)
-  - [Problem Set 5]() (News API Filter)
+  - [Problem Set 1](#ps1) (Housing Calculations)
+  - [Problem Set 2](#ps2) (Hangman)
+  - [Problem Set 3](#ps3) (Word Game)
+  - [Problem Set 4](#ps4) (String Permutation & Cyphers)
+  - [Problem Set 5](#ps5) (News API Filter)
 
 - All `finger exercises` required by the book, which was assigned to this course. <br>
   Some chapters did not require finger exercises.  
@@ -52,24 +52,28 @@ Problem Sets
 
   [PDF Assignment]() | [Source Code]()
 
+<a name="ps2"></a>
 - **Problem Set 2**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   [PDF Assignment]() | [Source Code]()
 
+<a name="ps3"></a>
 - **Problem Set 3**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   [PDF Assignment]() | [Source Code]()
 
+<a name="ps4"></a>
 - **Problem Set 4**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
   [PDF Assignment]() | [Source Code]()
 
+<a name="ps5"></a>
 - **Problem Set 5**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
