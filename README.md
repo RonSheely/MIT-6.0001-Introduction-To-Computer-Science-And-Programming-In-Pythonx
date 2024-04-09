@@ -22,16 +22,16 @@ Overview
 - All `finger exercises` required by the book, which was assigned to this course. <br>
   Some chapters did not require finger exercises.  
 
-  - [Chapter 2]()
-  - [Chapter 3]()
-  - [Chapter 4]()
-  - [Chapter 5]()
-  - [Chapter 6]()
-  - [Chapter 7]()
-  - [Chapter 9]()
-  - [Chapter 10]()
-  - [Chapter 11]()
-  - [Chapter 12]()
+  - [Chapter 2](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%202)
+  - [Chapter 3](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%203)
+  - [Chapter 4](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%204)
+  - [Chapter 5](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%205)
+  - [Chapter 6](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%206)
+  - [Chapter 7](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%207)
+  - [Chapter 9](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%209)
+  - [Chapter 10](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%2010)
+  - [Chapter 11](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%2011)
+  - [Chapter 12](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/0f5fed3c3dbb73808ddcec81c0b2cf20456e0efa/finger-exercises/Chapter%2012)
   
 Problem Sets
 ============= 
