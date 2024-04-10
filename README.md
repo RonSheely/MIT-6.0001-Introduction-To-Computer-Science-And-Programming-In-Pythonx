@@ -55,11 +55,11 @@ Problem Sets
   [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/54fc2f2eee9f104b19c6a0629e9671f026cd1445/problem-sets/ps1/ps1_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/54fc2f2eee9f104b19c6a0629e9671f026cd1445/problem-sets/ps1)
 
 <a name="ps2"></a>
-- **Problem Set 2**
+- **Problem Set 2 - Hangman**
 
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-  [PDF Assignment]() | [Source Code]()
+  [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps2/ps2_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps2)
 
 <a name="ps3"></a>
 - **Problem Set 3**
