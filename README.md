@@ -64,7 +64,12 @@ Problem Sets
   [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps2/ps2_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps2)
 
 <a name="ps3"></a>
-- **Problem Set 3**
+- **Problem Set 3 - Word game**
+
+  In this problem set, similiar to problem set 2, I implemented a C.L.I word <br>
+  game, that's very similiar to scrabble. The player would have a hand of letters, <br> 
+  score counting for words, and wild card letters. The game would also pull from <br>
+  a large list of words to validate player words.
 
   [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps3/ps3_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps3)
 
