@@ -74,9 +74,11 @@ Problem Sets
   [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps3/ps3_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/26b85a97710db67232972f42b388b1c9ebb8c3c6/problem-sets/ps3)
 
 <a name="ps4"></a>
-- **Problem Set 4**
+- **Problem Set 4 - String Permutation & Ciphering**
 
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  In this problem set, I wrote an algorithm to return all the permutations <br>
+  of any given string. In the second half of the problem set, I wrote a script <br>
+  that encrypted and decrypted messages using Caesar's Cypher.
 
   [PDF Assignment](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/tree/01fca7de95bd3faa84358b73d0df8a71d55c8b72/problem-sets/ps4/ps4_assignment.pdf) | [Source Code](https://github.com/ezratweaver/MIT-6.0001-Introduction-To-Computer-Science-And-Programming-In-Python/blob/01fca7de95bd3faa84358b73d0df8a71d55c8b72/problem-sets/ps4)
 
